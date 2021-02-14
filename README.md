@@ -1,10 +1,17 @@
-# mornitoringWebFinalProject
+# Well-Being Monitor
 
 # introduction
 
-web software development course project
-the application can be found in link: http://188.166.113.83/
+Website to monitor your daily mood and produce statistical reports on a weekly and monthly level.
+
+Techonologies: Deno runtime; Postgres Database; Oak framework for the router; Session is available; bcrypt is used for encrypted user credentials.
+
+I used Docker-compose to setup Postgres database and Deno runtime, flyway for dynamically updating database schema.
+
+Deployed on Digital Ocean, the application can be found in link: http://188.166.113.83/
+
 for best UX, plese use Google Chrome browser
+
 Junsheng Tan
 
 ## Setup
