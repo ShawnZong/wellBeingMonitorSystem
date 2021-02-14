@@ -1,0 +1,90 @@
+<%- include('../partials/header.ejs') %>
+<h1>Summary of <%= date.getDate() + "/" + (date.getMonth() + 1) + "/" +date.getFullYear() ;
+    %></h1>
+<h2>Choose a date to see summary</h2>
+<div>
+    <form method="POST">
+        <label for="date">Date</label>
+        <input required type="date" id="date" name="date" />
+        <button type="submit" name="camper" formaction="/behavior/summary/weekly">weekly summary</button>
+        <button type="submit" name="camper" formaction="/behavior/summary/monthly">monthly summary</button>
+    </form>
+</div>
+
+<% if(!summaryWeekly&&!summaryMonthly) { %>
+<h2>No data</h2>
+<% } %>
+<% if(summaryWeekly) { %>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Weekly Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Average sleep duration</td>
+                <td><%= summaryWeekly.avgSleepTime %></td>
+            </tr>
+            <tr>
+                <td>Average time spent on sports and exercise</td>
+                <td><%= summaryWeekly.avgSportExerciseTime %></td>
+            </tr>
+            <tr>
+                <td>Average time spent studying</td>
+                <td><%= summaryWeekly.avgStudyTime %></td>
+            </tr>
+            <tr>
+                <td>Average sleep quality</td>
+                <td><%= summaryWeekly.avgSleepQuality %></td>
+            </tr>
+            <tr>
+                <td>Average generic mood</td>
+                <td><%= summaryWeekly.avgMood %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<% } %>
+<% if(summaryMonthly){ %>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">Monthly Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Average sleep duration</td>
+                <td><%= summaryMonthly.avgSleepTime %></td>
+            </tr>
+            <tr>
+                <td>Average time spent on sports and exercise</td>
+                <td><%= summaryMonthly.avgSportExerciseTime %></td>
+            </tr>
+            <tr>
+                <td>Average time spent studying</td>
+                <td><%= summaryMonthly.avgStudyTime %></td>
+            </tr>
+            <tr>
+                <td>Average sleep quality</td>
+                <td><%= summaryMonthly.avgSleepQuality %></td>
+            </tr>
+            <tr>
+                <td>Average generic mood</td>
+                <td><%= summaryMonthly.avgMood %></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<% } %>
+<div>
+    <form method="GET" action="/">
+        <input type="submit" value="Return to main page" />
+    </form>
+</div>
+
+
+<%- include('../partials/footer.ejs') %>

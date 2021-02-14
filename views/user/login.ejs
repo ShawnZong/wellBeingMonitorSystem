@@ -1,0 +1,46 @@
+<%- include('../partials/header.ejs') %>
+<h1>Login!</h1>
+<div>
+    <% if(warningSignedIn && warningSignedIn.length>0){ %>
+    <p class="text-warning"><%= warningSignedIn %></p>
+    <% } %>
+    <form method="POST" action="/auth/login">
+        <div>
+
+            <label for="email">Email</label>
+            <input required type="email" name="email" id="email" />
+            <% if(errorNoUserOrWrongPwd && errorNoUserOrWrongPwd.length>0){ %>
+            <label for="email" class="text-danger"><%= errorNoUserOrWrongPwd %></label>
+            <% } %>
+        </div>
+        <div>
+
+            <label for="email">Password</label>
+            <input required type="password" name="password" id="password" />
+
+        </div>
+        <div>
+            <input type="submit" value="Login!" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <form method="GET" action="/auth/registration">
+        <button type="submit">Registration</button>
+    </form>
+</div>
+<div>
+    <form method="GET" action="/">
+        <button type="submit">Return to home page</button>
+    </form>
+</div>
+<% if(email){ %>
+<div>
+    <form method="GET" action="/auth/logout">
+        <button type="submit">Log out</button>
+    </form>
+</div>
+<% } %>
+
+<%- include('../partials/footer.ejs') %>

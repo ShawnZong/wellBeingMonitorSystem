@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <!-- boostrap style -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="/static/code.js" defer></script>
+  <!-- bulma style -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
+  <!-- tailwind style -->
+  <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+
+  <!-- millgram style -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css"> -->
+</head>
+
+<body>
+  <div class="container align-items-center">
+    <% if(email){ %>
+    <h4>Logged in as <%= email %></h4>
+    <% } %>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="#">
+        <span style='font-size:35px;'>&#127774;&#127771;</span>
+      </a>
+
+      <!-- Links -->
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/behavior/reporting">Make a report</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/behavior/summary">Summary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/registration">Registration</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/login">Login</a>
+        </li>
+        <% if(email){ %>
+        <li class="nav-item">
+          <a class="nav-link" href="/auth/logout">logout</a>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <h1>Mornitor your daily life</h1>
+    </div>

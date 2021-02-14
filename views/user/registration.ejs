@@ -1,0 +1,31 @@
+<%- include('../partials/header.ejs') %>
+<h1>Register!</h1>
+<form method="POST" action="/auth/registration">
+    <div>
+        
+        <label for="email">Email</label>
+        <input required type="email" value="<%= existedEmail %>" name="email" id="email" />
+        <% if(errorExistUser && errorExistUser.length>0){ %>
+            <label for="email" class="text-danger"><%= errorExistUser %></label>  
+        <% } %>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input required type="password" value="1234" name="password" id="password" onkeyup="verifyPwd()" />
+        <label class="text-danger" id="pwdLengthWarn">The password must have at least 4 characters</label>
+    </div>
+    <div>
+        <label for="verification">Confirm</label>
+        <input required type="password" value="1234" name="verification" id="verification" onkeyup="verifyPwd()" />
+        <label class="text-danger" id="verificationWarn"></label>
+    </div>
+    <div>
+        <input type="submit" value="Register" id="registerButton" disabled />
+    </div>
+</form>
+<div>
+    <form method="get" action="/">
+        <button type="submit">Return to home page</button>
+    </form>
+</div>
+<%- include('../partials/footer.ejs') %>

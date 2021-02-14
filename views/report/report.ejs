@@ -1,0 +1,80 @@
+<%- include('../partials/header.ejs') %>
+<h1>Send a report!</h1>
+<div>
+    <div>
+        <h2 id="titleMorning">Morning</h2>
+        <% if(filledMorning){ %>
+            <label for="titleMorning" class="text-warning" >You have sent today's morning report</label>
+        <% } %> 
+        <form method="POST" action="/behavior/reporting">
+            <div>
+                <label for="date"  >Date</label>
+                <input required type="date" id="date" name="date" />
+            </div>
+            <div>
+                <label for="mood">Generic Mood</label>
+                <input required type="range" min="1" max="5" value="3" id="mood" name="mood"
+                    oninput="this.nextElementSibling.value = this.value" />
+                <output>3</output>
+            </div>
+            <div>
+                <label for="sleepDuration">Sleep Duration</label>
+                <input required type="number" value="1" id="sleepDuration" name="sleepDuration" placeholder="hours" />
+            </div>
+            <div>
+                <label for="sleepQuality">Sleep Quality</label>
+                <input required type="range" min="1" max="5" value="3" id="sleepQuality" name="sleepQuality"
+                    oninput="this.nextElementSibling.value = this.value" />
+                <output>3</output>
+            </div>
+            <div>
+                <input type="hidden" value="1" id="type" name="type" />
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <h2 id="titleEvening">Evening</h2>
+    <% if(filledEvening){ %>
+        <label for="titleEvening" class="text-warning" >You have sent today's evening report</label>
+    <% } %> 
+    <form method="POST" action="/behavior/reporting">
+        <div>
+            <label for="date"   >Date!</label>
+            
+            <input required type="date" id="date" name="date" />
+        </div>
+        <div>
+            <label for="mood">Generic Mood</label>
+            <input required type="range" min="1" max="5" value="3" id="mood" name="mood"
+                oninput="this.nextElementSibling.value = this.value" />
+            <output>3</output>
+        </div>
+        <div>
+            <label for="sportExerciseTime">Time spent on sports and exercise</label>
+            <input required type="number" value="1" id="sportExerciseTime" name="sportExerciseTime" placeholder="hours" />
+        </div>
+        <div>
+            <label for="studyTime">Time spent studying</label>
+            <input required type="number" value="1" id="studyTime" name="studyTime" placeholder="hours" />
+        </div>
+        <div>
+            <label for="eatRegularityQuality">Regularity and quality of eating</label>
+            <input required type="range" min="1" max="5" value="3" id="eatRegularityQuality" name="eatRegularityQuality"
+                oninput="this.nextElementSibling.value = this.value" />
+            <output>3</output>
+        </div>
+        <div>
+            <input type="hidden" value="0" id="type" name="type" />
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
+<div>
+    <form method="GET" action="/">
+        <input type="submit" value="Return to main page" />
+    </form>
+</div>
+<%- include('../partials/footer.ejs') %>
