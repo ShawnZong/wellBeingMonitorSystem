@@ -12,6 +12,10 @@ Deployed on Digital Ocean, the application can be found in link: http://188.166.
 
 for best UX, plese use Google Chrome browser
 
+Endpoint /api/summary returns JSON with all uses' statistics, e.g., average mood of all users over the last 7 days.
+
+Endpoint /api/summary/:year/:month/:day returns JSON the same statistics as above, but whthin a given day.
+
 Junsheng Tan
 
 ## Setup
