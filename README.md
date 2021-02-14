@@ -3,7 +3,7 @@
 # introduction
 
 web software development course project
-the application can be found in link: https://tjs-monitor-system.herokuapp.com/
+the application can be found in link: http://188.166.113.83/
 for best UX, plese use Google Chrome browser
 Junsheng Tan
 
