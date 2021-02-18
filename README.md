@@ -17,6 +17,7 @@ Endpoint /api/summary returns JSON with all uses' statistics, e.g., average mood
 Endpoint /api/summary/:year/:month/:day returns JSON the same statistics as above, but whthin a given day.
 
 Junsheng Tan
+Portfolio website: https://junshengtan.webflow.io
 
 ## Setup
 
