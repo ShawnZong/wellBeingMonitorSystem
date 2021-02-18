@@ -1,7 +1,9 @@
 # Well-Being Monitor
 
 App website: http://188.166.113.83/
+
 Author: Junsheng Tan
+
 Portfolio website: https://junshengtan.webflow.io
 
 # introduction
@@ -27,6 +29,7 @@ Endpoint /api/summary/:year/:month/:day returns JSON the same statistics as abov
         
 
 ``` 
+
         create table users (
         id serial not null constraint users_pkey primary key,
         email varchar(320) not null,
@@ -108,6 +111,7 @@ password char(60) not null
     
 
 ``` 
+
         config.database = {
         hostname: "",
         database: "",
@@ -122,6 +126,7 @@ password char(60) not null
     
 
 ``` 
+
         export DATABASE_URL=postgres://<user>:<password>@<hostname>:<port>/<database>
     ```
 
@@ -130,11 +135,13 @@ password char(60) not null
     
 
 ``` 
+
         deno run --allow-net --unstable --allow-read --allow-env --allow-write app.js
     ```
 
 3.  To run test, enter the directory of app.js and run the following command in terminal
 
 ``` 
+
     deno test --allow-all --unstable
 ```
